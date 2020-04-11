@@ -16,9 +16,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionexit_triggered();
+
 
     void updateClock();
+    void on_actionexit_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

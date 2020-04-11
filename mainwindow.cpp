@@ -24,10 +24,20 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
 void MainWindow::on_actionexit_triggered()
 {
     QMessageBox *myBox=new QMessageBox();
     myBox->setText("are you leave ?");
     myBox->setIcon(QMessageBox::Question);
+    myBox->setStandardButtons(QMessageBox::Yes |QMessageBox::No);
+    myBox->setDefaultButton(QMessageBox::Yes);
+    myBox->setWindowTitle(" ");
     int r=myBox->exec();
+    switch (r) {
+    case QMessageBox::Yes :
+        QApplication::exit();
+        break;
+    }
 }
