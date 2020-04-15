@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 void MainWindow::updateClock(){
     QString time=QTime().currentTime().toString("->hh:mm:ss<-");
-    ui->label->setText(time);
+   ui->label->setText(time);
 }
 MainWindow::~MainWindow()
 {
