@@ -21,6 +21,10 @@ private slots:
     void updateClock();
     void on_actionexit_triggered();
 
+
+
+    void on_ShowAllBTN_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

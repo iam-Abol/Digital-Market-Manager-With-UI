@@ -4,6 +4,8 @@
 #include <qtimer.h>
 #include <QTime>
 #include <QMessageBox>
+#include <showallequitmentform.h>
+using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -17,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 void MainWindow::updateClock(){
     QString time=QTime().currentTime().toString("->hh:mm:ss<-");
-   ui->label->setText(time);
+    ui->label->setText(time);
 }
 MainWindow::~MainWindow()
 {
@@ -40,4 +42,13 @@ void MainWindow::on_actionexit_triggered()
         QApplication::exit();
         break;
     }
+}
+
+
+
+void MainWindow::on_ShowAllBTN_clicked()
+{
+    ShowAllEquitmentForm *form=new ShowAllEquitmentForm();
+    form->show();
+
 }

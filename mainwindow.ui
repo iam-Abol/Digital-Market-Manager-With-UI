@@ -49,13 +49,13 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
       <string>Digital Equitment Management</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="AddNewEquitmentBTN">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -74,7 +74,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="editEquitmentBTN">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -93,7 +93,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="ShowAllBTN">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -112,7 +112,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="SearchEquitmentBTN">
       <property name="geometry">
        <rect>
         <x>70</x>
