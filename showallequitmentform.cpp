@@ -3,6 +3,8 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <QFile>
+#include <QTextStream>
 using namespace std;
 ShowAllEquitmentForm::ShowAllEquitmentForm(QWidget *parent) :
     QWidget(parent),
@@ -10,26 +12,31 @@ ShowAllEquitmentForm::ShowAllEquitmentForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
 }
 
 ShowAllEquitmentForm::~ShowAllEquitmentForm()
 {
     delete ui;
 }
+void ShowAllEquitmentForm::getAllInfo(QString path){
+    QFile f(path);
+    f.open(QFile::ReadWrite | QFile::Text);
+    QTextStream readd(&f);
+    QString info=readd.readLine();
+    QString allInfo;
+    while(!info.isNull()){
+        allInfo+=info+"\n";
+        info=readd.readLine();
+    }
+    ui->label->setText(allInfo);
 
+}
 void ShowAllEquitmentForm::on_pushButton_clicked()
 {
-    ifstream input("items.txt");
 
 
-    string allInfo="";
-    while(input){
-         string OneEquitmentInfo;
-        getline(input,OneEquitmentInfo);
-        allInfo += OneEquitmentInfo+"\n";
-    }
+    QString path="e:/AbolLife/git/DigitalMarketManager/items.txt";
 
-
-
-    ui->label->setText("infos");
+    getAllInfo(path);
 }
