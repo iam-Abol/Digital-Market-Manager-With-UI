@@ -27,6 +27,8 @@ private slots:
 
     void on_AddNewEquitmentBTN_clicked();
 
+    void on_pushButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

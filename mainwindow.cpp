@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <showallequitmentform.h>
 #include <addnewequitment.h>
+#include <addnewmemberform.h>
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -58,4 +59,10 @@ void MainWindow::on_AddNewEquitmentBTN_clicked()
 {
     addNewEquitment *form=new addNewEquitment();
     form->show();
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    addNewMemberForm *f=new addNewMemberForm();
+    f->show();
 }

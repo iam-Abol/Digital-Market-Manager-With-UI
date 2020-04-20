@@ -26,6 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
         addnewequitment.cpp \
+        addnewmemberform.cpp \
         loginform.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -33,12 +34,14 @@ SOURCES += \
 
 HEADERS += \
         addnewequitment.h \
+        addnewmemberform.h \
         loginform.h \
         mainwindow.h \
         showallequitmentform.h
 
 FORMS += \
         addnewequitment.ui \
+        addnewmemberform.ui \
         loginform.ui \
         mainwindow.ui \
         showallequitmentform.ui

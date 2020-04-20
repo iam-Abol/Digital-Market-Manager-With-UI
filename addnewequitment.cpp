@@ -33,7 +33,7 @@ void addNewEquitment::on_pushButton_clicked()
     myBox->setWindowTitle(" ");
     myBox->setStandardButtons(QMessageBox::Ok);
     myBox->setDefaultButton(QMessageBox::Ok);
-    myBox->setWindowTitle("");
+
     ///////////////////
     QFile f("e:/AbolLife/git/DigitalMarketManager/items.txt");
     f.open(QFile::ReadWrite | QFile::Text);
