@@ -25,17 +25,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        addnewequitment.cpp \
         loginform.cpp \
         main.cpp \
         mainwindow.cpp \
         showallequitmentform.cpp
 
 HEADERS += \
+        addnewequitment.h \
         loginform.h \
         mainwindow.h \
         showallequitmentform.h
 
 FORMS += \
+        addnewequitment.ui \
         loginform.ui \
         mainwindow.ui \
         showallequitmentform.ui

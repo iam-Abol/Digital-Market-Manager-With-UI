@@ -25,6 +25,8 @@ private slots:
 
     void on_ShowAllBTN_clicked();
 
+    void on_AddNewEquitmentBTN_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

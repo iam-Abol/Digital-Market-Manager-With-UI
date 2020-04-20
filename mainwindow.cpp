@@ -5,6 +5,7 @@
 #include <QTime>
 #include <QMessageBox>
 #include <showallequitmentform.h>
+#include <addnewequitment.h>
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -51,4 +52,10 @@ void MainWindow::on_ShowAllBTN_clicked()
     ShowAllEquitmentForm *form=new ShowAllEquitmentForm();
     form->show();
 
+}
+
+void MainWindow::on_AddNewEquitmentBTN_clicked()
+{
+    addNewEquitment *form=new addNewEquitment();
+    form->show();
 }
