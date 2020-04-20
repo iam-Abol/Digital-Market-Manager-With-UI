@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(212, 255, 232);</string>
+  </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -23,14 +26,15 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>login</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>C:/Users/ABOLFAZL/Desktop/23373.png</normaloff>C:/Users/ABOLFAZL/Desktop/23373.png</iconset>
+     <normaloff>../../Qt/digitalMarketManagment/23373.png</normaloff>../../Qt/digitalMarketManagment/23373.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -55,14 +59,15 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Membership</string>
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>C:/Users/ABOLFAZL/Desktop/join_membership_ad_member_become-512.png</normaloff>C:/Users/ABOLFAZL/Desktop/join_membership_ad_member_become-512.png</iconset>
+     <normaloff>../../Qt/digitalMarketManagment/join_membership_ad_member_become-512.png</normaloff>../../Qt/digitalMarketManagment/join_membership_ad_member_become-512.png</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -75,86 +80,6 @@
    </property>
    <property name="default">
     <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>-20</x>
-     <y>-20</y>
-     <width>481</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 164, 181);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>140</y>
-     <width>471</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 164, 181);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>390</x>
-     <y>90</y>
-     <width>231</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 164, 181);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>-100</x>
-     <y>90</y>
-     <width>151</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 164, 181);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>90</y>
-     <width>21</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 164, 181);</string>
-   </property>
-   <property name="text">
-    <string/>
    </property>
   </widget>
  </widget>

@@ -15,6 +15,9 @@ public:
     explicit addNewEquitment(QWidget *parent = nullptr);
     ~addNewEquitment();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::addNewEquitment *ui;
 };
