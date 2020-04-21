@@ -15,6 +15,9 @@ public:
     explicit SearchMemberForm(QWidget *parent = nullptr);
     ~SearchMemberForm();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::SearchMemberForm *ui;
 };
