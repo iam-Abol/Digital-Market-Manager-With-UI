@@ -22,14 +22,11 @@ ShowAllEquitmentForm::~ShowAllEquitmentForm()
 void ShowAllEquitmentForm::getAllInfo(QString path){
     QFile f(path);
     f.open(QFile::ReadWrite | QFile::Text);
-    QTextStream readd(&f);
-    QString info=readd.readLine();
-    QString allInfo;
-    while(!info.isNull()){
-        allInfo+=info+"\n";
-        info=readd.readLine();
-    }
-    ui->label->setText(allInfo);
+    QTextStream read(&f);
+    QString info=read.readAll();
+
+
+    ui->plainTextEdit->setPlainText(info);
 
 }
 void ShowAllEquitmentForm::on_pushButton_clicked()

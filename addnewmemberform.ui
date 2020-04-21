@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Add new member</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(14, 109, 205);</string>

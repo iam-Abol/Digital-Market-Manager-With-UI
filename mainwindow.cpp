@@ -7,6 +7,7 @@
 #include <showallequitmentform.h>
 #include <addnewequitment.h>
 #include <addnewmemberform.h>
+#include <searchequitmentform.h>
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -65,4 +66,10 @@ void MainWindow::on_pushButton_6_clicked()
 {
     addNewMemberForm *f=new addNewMemberForm();
     f->show();
+}
+
+void MainWindow::on_SearchEquitmentBTN_clicked()
+{
+    SearchEquitmentForm *form=new SearchEquitmentForm();
+    form->show();
 }
