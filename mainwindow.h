@@ -31,6 +31,8 @@ private slots:
 
     void on_SearchEquitmentBTN_clicked();
 
+    void on_pushButton_8_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

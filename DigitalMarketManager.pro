@@ -31,6 +31,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         searchequitmentform.cpp \
+        searchmemberform.cpp \
         showallequitmentform.cpp
 
 HEADERS += \
@@ -39,6 +40,7 @@ HEADERS += \
         loginform.h \
         mainwindow.h \
         searchequitmentform.h \
+        searchmemberform.h \
         showallequitmentform.h
 
 FORMS += \
@@ -47,6 +49,7 @@ FORMS += \
         loginform.ui \
         mainwindow.ui \
         searchequitmentform.ui \
+        searchmemberform.ui \
         showallequitmentform.ui
 
 # Default rules for deployment.

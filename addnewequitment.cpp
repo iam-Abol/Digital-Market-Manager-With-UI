@@ -43,7 +43,7 @@ void addNewEquitment::on_pushButton_clicked()
     while (!info.isNull()) {
         if(info==allInfo){
             flag = false;
-            myBox->setText("New equitment not added because No A similar device is available from the imported device");
+            myBox->setText("New equitment not added because A similar device is available from the imported device");
             myBox->setIcon(QMessageBox::Warning);
             break;
         }
