@@ -42,9 +42,9 @@ void SearchEquitmentForm::on_pushButton_clicked()
         ui->plainTextEdit->setPlainText("equitment not found");
     }
     else {
-     ui->plainTextEdit->setPlainText("equitment information : \n"+Allinfos);
+        ui->plainTextEdit->setPlainText("equitment information : \n"+Allinfos);
     }
     ui->lineEdit->clear();
-
+    f.close();
 
 }

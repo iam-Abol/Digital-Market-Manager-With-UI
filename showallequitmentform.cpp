@@ -27,6 +27,7 @@ void ShowAllEquitmentForm::getAllInfo(QString path){
 
 
     ui->plainTextEdit->setPlainText(info);
+    f.close();
 
 }
 void ShowAllEquitmentForm::on_pushButton_clicked()

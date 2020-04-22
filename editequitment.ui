@@ -7,13 +7,25 @@
     <x>0</x>
     <y>0</y>
     <width>363</width>
-    <height>474</height>
+    <height>255</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>363</width>
+    <height>255</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>363</width>
+    <height>255</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Edit Equitment</string>
   </property>
-  <widget class="QLineEdit" name="lineEditinfo">
+  <widget class="QLineEdit" name="lineEditcode">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -26,69 +38,40 @@
     <string>equitment code</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>144</x>
-     <y>80</y>
-     <width>81</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
-   </property>
-   <property name="text">
-    <string>Find</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>60</x>
      <y>160</y>
      <width>241</width>
-     <height>51</height>
+     <height>81</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLineEdit" name="lineEditinfo">
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>130</y>
-     <width>121</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>equitment informations :</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditnew">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>250</y>
+     <y>80</y>
      <width>241</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="placeholderText">
     <string>new information :</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>322</y>
+     <y>120</y>
      <width>75</width>
      <height>31</height>
     </rect>

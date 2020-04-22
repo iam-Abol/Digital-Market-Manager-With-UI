@@ -2,6 +2,7 @@
 #include "ui_editequitment.h"
 #include <QFile>
 #include <QTextStream>
+#include <QDataStream>
 EditEquitment::EditEquitment(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::EditEquitment)
@@ -13,73 +14,82 @@ EditEquitment::~EditEquitment()
 {
     delete ui;
 }
-QString EditEquitment::search(QString code)
-{
-
-
-    QString codeFromFile;
-    QString info;
-    bool flag=false;
+int numberofLine(){
+    int i=1;
     QFile f("e:/AbolLife/git/DigitalMarketManager/items.txt");
     f.open(QFile::ReadOnly | QFile::Text);
     QTextStream input(&f);
-    input>>codeFromFile;
-    info=input.readLine();
-    QString Allinfos="";
-    while(!info.isNull()){
-        if(codeFromFile==code){
-            Allinfos+=code+info+"\n";
-            flag=true;
-
-        }
-        input>>codeFromFile;
-        info=input.readLine();
+    QString line=input.readLine();
+    while(!line.isNull()){
+        line=input.readLine();
+        i++;
     }
-    if(flag==true){
-        return Allinfos;
-    }
-
-
-
+    return i;
+    f.close();
 }
 void EditEquitment::on_pushButton_clicked()
 {
+    struct codeAndInfo{
+        QString code;
+        QString info;
+    };
+    ui->label->setText("hahahhaah");
+    int numberofLines=numberofLine();
+    codeAndInfo codeandinfo[numberofLines];
+    int i=0;
+    int r=0;
+    int t=0;
+    ///////////////////////////////
     QFile f("e:/AbolLife/git/DigitalMarketManager/items.txt");
-    f.open(QFile::ReadWrite | QFile::Text);
+    f.open(QFile::ReadOnly | QFile::Text);
     QTextStream input(&f);
-   QString codeFromfile;
-    input>>codeFromfile;
-
-
-    QString infosFromFile=input.readLine();
-    QString allThing="";
-    QString code=ui->lineEditinfo->text();
-    QString info=search(code);
-
-    while (!infosFromFile.isNull()) {
-        if(info==""){
-            ui->label->setText("equitment not found");
+    QString code=ui->lineEditcode->text();
+    QString info=ui->lineEditinfo->text();
+    ////////////////////////////////
+    QString infoFile;
+    QString codefile;
+    QFile f1("e:/AbolLife/git/DigitalMarketManager/items.txt");
+    f.open(QFile::ReadOnly | QFile::Text |QFile::Text);
+    QTextStream in(&f);
+    in>>code;
+    infoFile=in.readLine();
+    while (!info.isNull()) {
+        codeandinfo[r].code=codefile;
+        codeandinfo[r].info=infoFile;
+        in>>code;
+        infoFile=in.readLine();
+        r++;
+    }
+    ////////////////////////////////
+    bool flag=false;
+    while (i<numberofLines) {
+        if(codeandinfo[i].code==code){
+            codeandinfo[i].info=info;
+            flag=true;
         }
-        else {
-            ui->label->setText(info);
 
-            QString newInfo=ui->lineEditnew->text();
-            if(codeFromfile==code){
-                allThing+=code+newInfo+"\n";
-            }
-            else {
-                allThing+=codeFromfile+infosFromFile+"\n";
-            }
+        i++;
+    }
+    ///////////////////////////
 
-        }
-        code=ui->lineEditinfo->text();
-        infosFromFile=input.readLine();
+    f.close();
+    f.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+    QTextStream out(&f);
+    QString allthing="";
+    while(t<numberofLines){
+        allthing+=codeandinfo[t].code+codeandinfo->info+"\n";
+    }
+    out<<allthing;
+    //////////////////////////////
+    if(flag==true){
+        ui->label->setText("equitment edited");
+    }
+    else {
+        ui->label->setText("equitment not found");
 
     }
-    ui->label->setText(allThing);
-}
-
-void EditEquitment::on_pushButton_2_clicked()
-{
 
 }
+
+
+

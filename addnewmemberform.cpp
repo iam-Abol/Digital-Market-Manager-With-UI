@@ -53,4 +53,5 @@ void addNewMemberForm::on_pushButton_clicked()
         myBox->setInformativeText("\n! Member is not added because member similar to existing member exists !\n");
     }
     myBox->exec();
+    f.close();
 }

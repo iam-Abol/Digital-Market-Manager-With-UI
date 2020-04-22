@@ -59,4 +59,6 @@ void addNewEquitment::on_pushButton_clicked()
 
 
     myBox->exec();
+    f.close();
+
 }
