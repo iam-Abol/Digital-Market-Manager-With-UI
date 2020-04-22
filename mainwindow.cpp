@@ -9,6 +9,7 @@
 #include <addnewmemberform.h>
 #include <searchequitmentform.h>
 #include <searchmemberform.h>
+#include <editequitment.h>
 using namespace std;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -78,5 +79,11 @@ void MainWindow::on_SearchEquitmentBTN_clicked()
 void MainWindow::on_pushButton_8_clicked()
 {
     SearchMemberForm *f=new SearchMemberForm();
+    f->show();
+}
+
+void MainWindow::on_editEquitmentBTN_clicked()
+{
+    EditEquitment *f=new EditEquitment();
     f->show();
 }

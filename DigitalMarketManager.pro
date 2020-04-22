@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
         addnewequitment.cpp \
         addnewmemberform.cpp \
+        editequitment.cpp \
         loginform.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -37,6 +38,7 @@ SOURCES += \
 HEADERS += \
         addnewequitment.h \
         addnewmemberform.h \
+        editequitment.h \
         loginform.h \
         mainwindow.h \
         searchequitmentform.h \
@@ -46,6 +48,7 @@ HEADERS += \
 FORMS += \
         addnewequitment.ui \
         addnewmemberform.ui \
+        editequitment.ui \
         loginform.ui \
         mainwindow.ui \
         searchequitmentform.ui \
