@@ -3,6 +3,12 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDataStream>
+
+#include <iostream>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <QMessageBox>
 EditEquitment::EditEquitment(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::EditEquitment)
@@ -14,80 +20,67 @@ EditEquitment::~EditEquitment()
 {
     delete ui;
 }
-int numberofLine(){
-    int i=1;
-    QFile f("e:/AbolLife/git/DigitalMarketManager/items.txt");
-    f.open(QFile::ReadOnly | QFile::Text);
-    QTextStream input(&f);
-    QString line=input.readLine();
-    while(!line.isNull()){
-        line=input.readLine();
-        i++;
-    }
-    return i;
-    f.close();
-}
+
+struct codeAndInfo{
+    QString code;
+    QString info;
+};
 void EditEquitment::on_pushButton_clicked()
 {
-    struct codeAndInfo{
-        QString code;
-        QString info;
-    };
-    ui->label->setText("hahahhaah");
-    int numberofLines=numberofLine();
-    codeAndInfo codeandinfo[numberofLines];
-    int i=0;
-    int r=0;
-    int t=0;
-    ///////////////////////////////
-    QFile f("e:/AbolLife/git/DigitalMarketManager/items.txt");
-    f.open(QFile::ReadOnly | QFile::Text);
-    QTextStream input(&f);
+
     QString code=ui->lineEditcode->text();
-    QString info=ui->lineEditinfo->text();
-    ////////////////////////////////
-    QString infoFile;
-    QString codefile;
-    QFile f1("e:/AbolLife/git/DigitalMarketManager/items.txt");
-    f.open(QFile::ReadOnly | QFile::Text |QFile::Text);
-    QTextStream in(&f);
-    in>>code;
-    infoFile=in.readLine();
-    while (!info.isNull()) {
-        codeandinfo[r].code=codefile;
-        codeandinfo[r].info=infoFile;
-        in>>code;
-        infoFile=in.readLine();
-        r++;
-    }
-    ////////////////////////////////
+    QString infos=ui->lineEditinfo->text();
+    QVector <codeAndInfo> a;
+    int i=0;
+    QFile f("e:/AbolLife/git/DigitalMarketManager/items.txt");
+    f.open(QFile::ReadWrite | QFile::Text);
+    QTextStream input(&f);
+    codeAndInfo addToVec;
+    input>>addToVec.code;
+    addToVec.info=input.readLine();
     bool flag=false;
-    while (i<numberofLines) {
-        if(codeandinfo[i].code==code){
-            codeandinfo[i].info=info;
+    while (!addToVec.info.isNull()) {
+
+        if(addToVec.code==code){
+            addToVec.info=infos;
             flag=true;
         }
-
-        i++;
+        a<<addToVec;
+       input>> addToVec.code;
+       addToVec.info=input.readLine();
+       i++;
     }
-    ///////////////////////////
+    int t=0;
+    QString lineForAddToFile;
+    std::fstream out;
+    out.open("e:/AbolLife/git/DigitalMarketManager/items.txt",std::ios::out);
 
-    f.close();
-    f.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
-    QTextStream out(&f);
-    QString allthing="";
-    while(t<numberofLines){
-        allthing+=codeandinfo[t].code+codeandinfo->info+"\n";
+
+    QString allThing;
+    while (t<a.size()) {
+        lineForAddToFile=a[t].code+" "+a[t].info+"\n";
+        allThing+=lineForAddToFile;
+        t++;
     }
-    out<<allthing;
-    //////////////////////////////
+    std::string all=allThing.toStdString();
+
+    out<<all;
+
+    QMessageBox *myBox=new QMessageBox();
     if(flag==true){
-        ui->label->setText("equitment edited");
+        myBox->setText("equitment edited");
+        myBox->setDefaultButton(QMessageBox::Ok);
+        myBox->setIcon(QMessageBox::Information);
+        myBox->setWindowTitle(" ");
     }
-    else {
-        ui->label->setText("equitment not found");
+    if(flag==false){
+        myBox->setText("equitment not found");
+        myBox->setIcon(QMessageBox::Warning);
+        myBox->setDefaultButton(QMessageBox::Ok);
+        myBox->setWindowTitle(" ");
 
     }
+    myBox->exec();
 
 }
 
